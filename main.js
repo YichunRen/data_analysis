@@ -3,8 +3,11 @@ let name = ['Animal Crossing',
 			'Animal Crossing: City Folk', 
 			'Animal Crossing: New Leaf',
 			'Animal Crossing: New Horizons'];
+let product = ['67897', '783997', '636863', '770668', '628774',
+				'1024557', '353560', '94609', '696384', '191499']
 let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
-let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
+let blueColor = ["#D9ED92", "#B5E48C", "#99D98C", "#76C893", "#52B69A",
+				"#34A0A4", "#168AAD", "#1A759F", "#1E6091", "#184E77"];
 
 let us = [
 	{'code': 'HI', 'value': 100},
@@ -277,21 +280,18 @@ function plotBar() {
 			type: 'bar'
 		},
 		title: {
-			text: 'Main Series Global Sales'
-		},
-		subtitle: {
-			text: 'Source: <a href="https://vgsales.fandom.com/wiki/Animal_Crossing">www.fandom.com</a>'
+			text: '销量统计'
 		},
 		xAxis: {
-			categories: name,
+			categories: product,
 			title: {
-				text: 'Main Series'
+				text: '产品id'
 			}
 		},
 		yAxis: {
 			min: 0,
 			title: {
-				text: 'Global Sales (millions)'
+				text: '销量'
 			}
 		},
 		tooltip: {
@@ -314,23 +314,18 @@ function plotBar() {
 			enabled: false
 		},
 		series: [{
-			name: 'Sales',
+			name: '销量',
 			data: [
-				{y: sales[0], color: gameColor[0], value: 0},
-				{y: sales[1], color: gameColor[1], value: 1},
-				{y: sales[2], color: gameColor[2], value: 2},
-				{y: sales[3], color: gameColor[3], value: 3},
-				{y: sales[4], color: gameColor[4], value: 4}],
-			dataLabels: {
-				useHTML: true,
-				formatter: function() {
-					if (this.y == 13.41) {
-						return '<span style="color: red; font-size: 16px;">' + this.y + '</span>';
-					} else {
-						return this.y;
-					}
-				}
-			},
+				{y: 293047, color: blueColor[0], value: 0},
+				{y: 149601, color: blueColor[1], value: 1},
+				{y: 69773, color: blueColor[2], value: 2},
+				{y: 21179, color: blueColor[3], value: 3},
+				{y: 19301, color: blueColor[4], value: 4},
+				{y: 17771, color: blueColor[5], value: 5},
+				{y: 11930, color: blueColor[6], value: 6},
+				{y: 11818, color: blueColor[7], value: 7},
+				{y: 11143, color: blueColor[8], value: 8},
+				{y: 10424, color: blueColor[9], value: 9}],
 			showInLegend: false,
 		}]
 	});
@@ -774,10 +769,11 @@ function plotMap() {
 	});	
 }
 
-var pieColor = ['#f44c56', '#f3747b','#f6a8ac', '#f8d6d7', '#22d1c2', '#40e3d6', '#81efe6', '#cef8f5'];
-var pieColor2 = [ '#f6323d', '#f45760','#f8a0a5', '#f8d6d7', '#0bbcad', '#2fdacc', '#6be9df', '#cef8f5'];
+var pieColor = ['#E63946', '#457B9D','#F1FAEE'];
+var pieColor2 = [ '#F1FAEE', '#A8DADC', '#457B9D', '#1D3557'];
 function plotPie() {
-	Highcharts.chart('pieGame', {
+    
+    Highcharts.chart('pieBuy', {
 		credits: {
 			enabled: false
 		},
@@ -786,11 +782,8 @@ function plotPie() {
 			plotBorderWidth: 0,
 			plotShadow: false
 		},
-		subtitle: {
-			text: 'source: <a href="https://newzoo.com/insights/articles/male-and-female-gamers-how-their-similarities-and-differences-shape-the-games-market/">www.earnest.com</a >'
-		},
 		title: {
-			text: 'Age/Gender <br> of Console Players',
+			text: '购买用户性别分布',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
@@ -829,18 +822,13 @@ function plotPie() {
 		},
 		series: [{
 			type: 'pie',
-			name: 'Proportion',
+			name: '比例',
 			innerSize: '50%',
 			showInLegend:true,
 			data: [
-				['F10-20', 8],
-				['F21-35', 14],
-				['F36-50', 6],
-				['F51-65', 2],
-				['M10-20', 19],
-				['M21-35', 34],
-				['M36-50', 15],
-				['M51-65', 2]
+				['女性', 246682],
+				['男性', 246394],
+				['未知', 246767]
 			],
 			dataLabels: {
 				style: {
@@ -853,7 +841,7 @@ function plotPie() {
 	});
 
 
-	Highcharts.chart('pieAnimalCrossing', {
+	Highcharts.chart('pieAge', {
 		credits: {
 			enabled: false
 		},
@@ -862,11 +850,8 @@ function plotPie() {
 			plotBorderWidth: 0,
 			plotShadow: false
 		},
-		subtitle: {
-			text: 'source: <a href="https://manamina.valuesccg.com/articles/800">manamina.valuesccg.com</a >'
-		},
 		title: {
-			text: 'Age/Gender <br> of AC Players',
+			text: '购买用户年龄分布',
 			align: 'center',
 			verticalAlign: 'middle',
 			y: 60
@@ -896,7 +881,7 @@ function plotPie() {
 				pie: {
                     shadow: false
 				},
-				colors: pieColor
+				colors: pieColor2
 			}
 		},
 		legend: {
@@ -905,18 +890,18 @@ function plotPie() {
 		},
 		series: [{
 			type: 'pie',
-			name: 'Proportion',
+			name: '比例',
 			innerSize: '50%',
 			showInLegend:true,
 			data: [
-				['F20-29', 51.3*0.505],
-				['F30-39', 51.3*0.224],
-				['F40-49', 51.3*0.183],
-				['F50+', 51.3*0.088],
-				['M20-29', 48.7*0.505],
-				['M30-39', 48.7*0.224],
-				['M40-49', 48.7*0.183],
-				['M50+', 48.7*0.088],
+				['<18', 121740],
+				['18-24', 122072],
+				['25-29', 122009],
+				['30-34', 122173],
+				['35-39', 121668],
+				['40-49', 122389],
+				['>50', 121905],
+				['未知', 121709]
 			],
 			dataLabels: {
 				style: {
@@ -927,6 +912,7 @@ function plotPie() {
 			}
 		}]
 	});
+	
 }
 
 function plotCloud() {
@@ -973,6 +959,7 @@ function plotCloud() {
 			name: 'Relative Prominence'
 		}]
 	});
+	
 }
 
 function plotCalendar() {

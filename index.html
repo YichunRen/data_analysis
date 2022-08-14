@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	
+	<title>Story of Animal Crossing</title>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Bitter&display=swap" rel="stylesheet">
+
+	<link href="styleconsole.css" rel="stylesheet" />
+	<script src="main.js"></script>
+
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/modules/timeline.js"></script>
+	<script src="https://code.highcharts.com/maps/modules/map.js"></script>
+	<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+	<script src="https://code.highcharts.com/modules/wordcloud.js"></script>
+ 	<script src="https://code.highcharts.com/modules/heatmap.js"></script>
+</head>
+
+<body onload="init();">
+	<div id = "console">
+		<div id = "screen">
+			<h2 class="center" style="color:white" id="story">Story of </h2>
+			<p></p><img src="./images/animal.gif" style="width:30%;"></img>  <img src="./images/crossing.gif" style="width:30%;"></img></p>
+			<p class="center" style="color:white" id="author">By Yichun Ren & Jiayi Fan</p>
+			<section id="vitalScorecards">
+				<section id="seriesScorecard">
+				 <h3 style="color:#00da26">Games</h3>
+				 <p style="color:#00da26" class="dashboard">8</p >
+				</section>
+			
+				<section id="platformsScorecard">
+				 <h3 style="color:#0069ff">Platforms</h3>
+				 <p style="color:#0069ff" class="dashboard">8</p >
+				</section>
+			
+				<section id="yearsScorecard">
+				 <h3 style="color:#ff0200">Years</h3>
+				 <p style="color:#ff0200" class="dashboard">19</p >
+				</section>
+			
+				<section id="salesScorecard">
+				 <h3 style="color:#fff400">Total Sales</h3>
+				 <p style="color:#fff400" class="dashboard">47.78 M</p >
+				</section>
+			</section><br>
+			<h3 style="color:white"><a href="./data.html" id="start">Start Game</a></h3 >
+		</div>
+	</div>
+</body>
+
+</html>

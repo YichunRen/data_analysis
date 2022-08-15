@@ -1,10 +1,4 @@
-let name = ['Animal Crossing', 
-			'Animal Crossing: Wild World', 
-			'Animal Crossing: City Folk', 
-			'Animal Crossing: New Leaf',
-			'Animal Crossing: New Horizons'];
-let sales = [2.32, 11.75, 4.32, 12.55, 13.41];
-let gameColor = ["#b19bcb", "#f3747b", "#93d6e3", "#14c8b9", "#ecde78"];
+
 
 let product = ['191499', '353560', '1059899', '713695', '1039919',
 				'221663', '655904', '81360', '936203', '107407'];

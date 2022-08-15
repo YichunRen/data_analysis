@@ -95,6 +95,7 @@ p {
 
 .flex-item1 {
     width: 70%; 
+    height: 100%;
     padding-right: 3%;
     text-align: center;
 }
